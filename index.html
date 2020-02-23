@@ -16,6 +16,8 @@
         :labelWidth="90"
         :labelClassName="labelClass"
         :render-content="renderContent"
+        :pan='true' 
+        :zoom='true'
         @on-node-click="onNodeClick"
         @on-node-mouseover="onNodeMouseOver"
         @on-node-mouseout="onNodeMouseOut"
@@ -30,8 +32,27 @@
       data: () => ({
         tree: {
           label: 'Owner',
+          couple: true,
+          spouse:{
+            label:'Spouse very lomg name'
+          },
           children: [{
-            label: 'Label 1'
+            label: 'Label 1',
+            couple: true,
+          spouse:{
+            label:'Labela'
+          },
+          children: [{
+            label: 'Label 1',
+            couple: true,
+          spouse:{
+            label:'Labela'
+          }
+          },{
+            label: 'Label 2'
+          },{
+            label: 'Label 3'
+          }]
           },{
             label: 'Label 2'
           },{
@@ -44,7 +65,14 @@
           return "bg_node";
         },
         renderContent (h, data) {
+          console.log(data)
           return data.label;
+          // if(data.couple){
+          //   return [data.label, data.spouse.label]
+          // }else{
+
+          //   return data.label;
+          // }
         },
         onNodeClick (e, data) {
           console.log('CLICK', e);

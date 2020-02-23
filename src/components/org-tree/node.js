@@ -129,7 +129,7 @@ export const renderChildren = (h, list, context) => {
 export const render = (h, context) => {
   const {props} = context
 
-  console.log(context.listeners)
+  console.log(h,context)
   return renderNode(h, props.data, context)
 }
 
