@@ -1,6 +1,6 @@
 # vue-org-tree
 
-> A simple organization tree chart based on Vue2.x
+> A simple organization/family tree chart based on Vue2.x 
 
 ## Usage
 
@@ -48,9 +48,11 @@ Vue.use(Vue2OrgTree)
   prop              | descripton                              | type                   | default
   ------------------|-----------------------------------------|:----------------------:|:---------------------------------------------------------:
   data              |                                         | `Object`               |
-  props             |  configure props                        | `Object`               | `{label: 'label', children: 'children', expand: 'expand'}`
+  props             |  configure props                        | `Object`               | `{label: 'label', children: 'children', expand: 'expand', couple: 'couple', spouse: 'spouse'}`
   labelWidth        |  node label width                       | `String` \| `Number`   | `auto`
   collapsable       |  children node is collapsable           | `Boolean`              | `true`
+  zoom       |  allows to zoom on the tree           | `Boolean`              | `false`
+  pan       |   allows  to move the tree in a panel          | `Boolean`              | `false`
   renderContent     |  how to render node label               | `Function`             |     -
   labelClassName    |  node label class                       | `Function` \| `String` |     -
   selectedKey       |  The key of the selected node           | `String`               |     -
