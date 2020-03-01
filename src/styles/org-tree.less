@@ -41,6 +41,17 @@
     box-shadow: 0 1px 5px rgba(0, 0, 0, .15);
   }
 }
+.org-tree-node-label-couple {
+  position: relative;
+  display: inline-block;
+
+  .org-tree-node-label-inner {
+    padding: 10px 15px;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, .15);
+  }
+}
 .org-tree-node-btn {
   position: absolute;
   top: 100%;
@@ -87,6 +98,7 @@
     border: none;
   }
 }
+
 .org-tree-node {
   padding-top: 20px;
   display: table-cell;
@@ -117,6 +129,7 @@
   }
 
 }
+
 .collapsable .org-tree-node.collapsed {
   padding-bottom: 30px;
 
@@ -130,6 +143,7 @@
     border-right: 1px solid #ddd;
   }
 }
+
 .org-tree > .org-tree-node {
   padding-top: 0;
 
@@ -157,6 +171,7 @@
     clear: both;
   }
 }
+
 
 .horizontal {
   .org-tree-node {
@@ -210,6 +225,12 @@
     display: table-cell;
     vertical-align: middle;
   }
+  .org-tree-node-label-couple {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  
 
   &.collapsable .org-tree-node.collapsed {
     padding-right: 30px;
@@ -230,6 +251,7 @@
     margin-top: -11px;
     margin-left: 9px;
   }
+
 
   & > .org-tree-node:only-child:before {
     border-bottom: 0;

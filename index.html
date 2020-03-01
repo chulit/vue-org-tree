@@ -13,14 +13,15 @@
     <div>
       <vue2-org-tree
         :data="tree"
+        :collapsable="collapsed"
         :labelWidth="90"
         :labelClassName="labelClass"
         :render-content="renderContent"
         :pan='true' 
         :zoom='true'
+        @on-expand="expand"
         @on-node-click="onNodeClick"
-        @on-node-mouseover="onNodeMouseOver"
-        @on-node-mouseout="onNodeMouseOut"
+        
       />
     </div>
 
@@ -30,6 +31,7 @@
     new Vue({
       el: '#app',
       data: () => ({
+        collapsed: true,
         tree: {
           label: 'Owner',
           couple: true,
@@ -47,7 +49,14 @@
             couple: true,
           spouse:{
             label:'Labela'
+          },
+          children:[
+          {
+            label: 'Label 2'
+          },{
+            label: 'Label 3'
           }
+          ]
           },{
             label: 'Label 2'
           },{
@@ -56,16 +65,26 @@
           },{
             label: 'Label 2'
           },{
-            label: 'Label 3'
+            label: 'Label 3',
+            children:[
+            {
+            label: 'Label 2'
+          }
+            ]
           }]
         }
       }),
       methods: {
+        expand (e,data) {
+        // return true;
+        // console.log(e,data)
+        data.expand = !data.expand
+      },          
         labelClass (data) {
           return "bg_node";
         },
         renderContent (h, data) {
-          console.log(data)
+          // console.log(data)
           return data.label;
           // if(data.couple){
           //   return [data.label, data.spouse.label]

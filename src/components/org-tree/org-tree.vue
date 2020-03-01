@@ -1,9 +1,9 @@
 <template>
-  <div class="org-tree-container" 
-    v-bind="{ scopedSlots: $scopedSlots }"    
+  <div     v-bind="{ scopedSlots: $scopedSlots }"    
     @wheel="zoom && zoomHandler($event)"
-    @mouseup="pan && panning && panEndHandler($event)">
+    @mouseup="pan && panning && panEndHandler($event)" >
 
+    <div class="org-tree-container"  >
     <div class="org-tree" :class="{horizontal, collapsable}" 
       :style="{ transform: transformVal, cursor: cursorVal }"
       @mousedown="pan && panStartHandler($event)"
@@ -24,6 +24,9 @@
       />
     </div>
   </div>
+
+  </div>
+
 </template>
 
 <script>
