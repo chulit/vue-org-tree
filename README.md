@@ -98,7 +98,7 @@ It is called when the mouse leaves the label.
 
 - default
 
-  ![default](./images/default.png)
+  ![default](./images/fmlt-sample.png)
 
 - horizontal
 
