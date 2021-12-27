@@ -102,7 +102,7 @@ It is called when the mouse leaves the label.
 
 - horizontal
 
-  ![horizontal](./images/horizontal.png)
+  TODO
 
 ## Browser support
 
