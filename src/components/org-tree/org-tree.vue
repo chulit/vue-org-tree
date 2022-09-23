@@ -1,10 +1,10 @@
 <template>
-  <div     v-bind="{ scopedSlots: $scopedSlots }"    
+  <div     v-bind="{ scopedSlots: $scopedSlots }"
     @wheel="zoom && zoomHandler($event)"
     @mouseup="pan && panning && panEndHandler($event)" >
 
     <div class="org-tree-container"  >
-    <div class="org-tree" :class="{horizontal, collapsable}" 
+    <div class="org-tree" :class="{horizontal, collapsable}"
       :style="{ transform: transformVal, cursor: cursorVal }"
       @mousedown="pan && panStartHandler($event)"
       @mousemove="pan && panning && panHandler($event)">
@@ -50,7 +50,7 @@ export default {
       startY: 0,
       transformVal: ''
     }
-  },  
+  },
   props: {
     data: {
       type: Object,
@@ -83,7 +83,7 @@ export default {
       type: Number,
       required: false,
       default: 7
-    },    
+    },
     horizontal: Boolean,
     selectedKey: String,
     collapsable: Boolean,
@@ -184,11 +184,11 @@ export default {
     zoomHandler (e) {
       let newScale  = 1 + (e.deltaY > 0 ? -0.2 : 0.2)
       this.setChartScale(newScale)
-    }    
-  }  
+    }
+  }
 }
 </script>
 
-<style lang="less">
+<style lang="scss">
 @import '../../styles/org-tree';
 </style>
